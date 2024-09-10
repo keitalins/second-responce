@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hospital Registration</h1>
+        <p>Register for your appointment with ease</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Registration Form -->
+        <section id="registration">
+            <h2>Patient Registration Form</h2>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Reason for Visit -->
+                <div class="form-group">
+                    <label for="reason">Reason for Visit:</label>
+                    <textarea id="reason" name="reason" rows="4" required></textarea>
+                </div>
+
+                <!-- Preferred Appointment Date -->
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Appointment Date:</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+            </form>
+
+            <!-- Success Message -->
+            <p id="successMessage" class="success-message"></p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Our Hospital. All rights reserved.</p>
+        <p>Contact us: info@ourhospital.com | +123 456 7890</p>
+    </footer>
+
+    <script src="registration.js"></script>
+</body>
+</html>

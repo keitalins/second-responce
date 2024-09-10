@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Doctor Anywhere And Anytime</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+.intro {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+#doctor-list {
+    padding: 20px;
+    display: none;
+}
+
+#doctor-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#doctor-list ul li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Best Doctor Anywhere And Anytime</h1>
+    </header>
+
+    <section class="intro">
+        <p>Find the best doctors who are available anytime and anywhere. We provide top-quality care that fits into your busy schedule.</p>
+        <p>Get immediate access to specialists with just a click.</p>
+        <button id="find-doctor-btn">Find a Doctor Now</button>
+    </section>
+
+    <section id="doctor-list" class="hidden">
+        <h2>Available Doctors</h2>
+        <ul>
+            <li>Dr. Eugine Ortiz - Cardiologist</li>
+            <li>Dr. micheal Smith - Dermatologist</li>
+            <li>Dr. Jin jonng lee- Neurologist</li>
+            <li>Dr. Dareen Brown - Pediatrician</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('find-doctor-btn').addEventListener('click', function() {
+    document.getElementById('doctor-list').style.display = 'block';
+});
+    </script>
+</body>
+</html>

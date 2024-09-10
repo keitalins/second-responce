@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hospital Login</h1>
+        <p>Login to access your account</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Login Form -->
+        <section id="login">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" onsubmit="return validateLogin()">
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit">Login</button>
+
+                <!-- Error Message -->
+                <p id="errorMessage" class="error-message"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Our Hospital. All rights reserved.</p>
+        <p>Contact us: info@ourhospital.com | +123 456 7890</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
