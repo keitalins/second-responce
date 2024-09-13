@@ -740,96 +740,55 @@ footer {
 
 /* Base Styles (for screens larger than 992px) */
 
-/* Large Screens (≥ 992px) */
-@media (min-width: 992px) {
+/* Large screens (≥ 992px) */
+@media (max-width: 992px) {
   .hero {
-    padding: 80px 40px;
+    flex-direction: column;
+    padding: 60px 20px;
   }
-  .doctor-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .doctor-card {
-    width: 250px;
-  }
-  .info-cards {
-    flex-direction: row;
-  }
-  #best-doctor, #urgent-care {
-    display: flex;
-  }
-  #testimonials {
-    flex-direction: row;
+
+  .doctor-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Medium Screens (≥ 768px and < 992px) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Medium screens (≥ 768px) */
+@media (max-width: 768px) {
   .hero {
-    padding: 60px 30px;
+    padding: 40px 15px;
   }
-  .doctor-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .doctor-card {
-    width: 200px;
-  }
-  .info-cards {
-    flex-direction: row;
-  }
-  #best-doctor, #urgent-care {
-    display: flex;
-    flex-direction: column;
-  }
-  #testimonials {
-    flex-direction: column;
-  }
-}
 
-/* Small Screens (≥ 576px and < 768px) */
-@media (min-width: 576px) and (max-width: 767px) {
-  .hero {
-    padding: 40px 20px;
+  .doctor-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .doctor-cards {
-    flex-direction: column;
-  }
-  .doctor-card {
+
+  .info-card {
     width: 100%;
   }
-  .info-cards {
-    flex-direction: column;
-  }
-  #best-doctor, #urgent-care {
-    display: flex;
-    flex-direction: column;
-  }
-  #testimonials {
-    flex-direction: column;
-  }
 }
 
-/* Extra Small Screens (< 576px) */
-@media (max-width: 575px) {
+/* Small screens (≥ 576px) */
+@media (max-width: 576px) {
   .hero {
     padding: 20px 10px;
   }
-  .doctor-cards {
-    flex-direction: column;
+
+  .doctor-cards-grid {
+    grid-template-columns: 1fr;
   }
-  .doctor-card {
+
+  .info-card {
     width: 100%;
   }
-  .info-cards {
+}
+
+/* Extra small screens (< 576px) */
+@media (max-width: 575px) {
+  header nav {
     flex-direction: column;
   }
-  #best-doctor, #urgent-care {
-    flex-direction: column;
-  }
-  #testimonials {
+
+  .doctor-cards {
     flex-direction: column;
   }
 }
