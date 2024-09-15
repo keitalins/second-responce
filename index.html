@@ -32,44 +32,54 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
-      <h1>We Care About Your Health</h1>
+      <h1>Your Health is our priority At Rediant</h1>
       <p>At Rediant Medical Hospital, your health is our passion. We are committed to providing personalized, compassionate 
         <br>care that empowers you to live your healthiest life. <br>From expert medical advice to seamless online consultations, we're here every step of the way. 
         <br>Trust us to prioritize your well-being with dedicated support, innovative solutions, and a team of top specialists who truly care. 
         <br>Let us help you take charge of your health—because when it comes to your wellness, we go above and beyond.</p>
         <br>
         <br>
-      <form>
-        <input type="email" placeholder="Enter Your Email">
-        <button class="signup-btn" onclick="window.location.href='registration.html'">Sign Up</button>
-      </form>
-      <button class="watch-video" style="background-color: black; color :white" ><a href="booknow.html">Book</a></button>
-      <i class="bi bi-play-circle-fill">Watch Video</i>
-    </div>
+            <form>
+                <input type="email" placeholder="Enter Your Email">
+                <button class="signup-btn" onclick="window.location.href='registration.html'">Sign Up</button>
+            </form>
+            
+            <button class="watch-video" onclick="window.location.href='booknow.html'">Book Now</button>
+            <button class="watch-video" onclick="toggleVideo()">Watch Video</button>
+        </div>
     <div class="hero-image">
-      <img src="https://youtu.be/cDDWvj_q-o8?si=uqdKIpWsIel65_OA" alt="Hero Image Placeholder">
+            <div class="video-container" id="videoContainer">
+                <video id="promoVideo" width="320" height="240" controls>
+                    <source src="images/y2mate.com - What is a Modern Healthcare Facility_1080p.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
     </div>
   </section>
 
   <!-- Stats Section -->
-  <section class="stats">
-    <div class="stat-item">
-      <h2>95%</h2>
+<section class="stats">
+  <div class="stat-item">
+      <h2 class="count" data-target="95">0</h2>
       <p>Satisfaction Rate</p>
-    </div>
-    <div class="stat-item">
-      <h2>1,500+</h2>
+  </div>
+  <div class="stat-item">
+      <h2 class="count" data-target="1500">0</h2>
       <p>Doctors</p>
-    </div>
-    <div class="stat-item">
-      <h2>3,000+</h2>
+  </div>
+  <div class="stat-item">
+      <h2 class="count" data-target="3000">0</h2>
       <p>Patients</p>
-    </div>
-    <div class="stat-item">
-      <h2>100%</h2>
+  </div>
+  <div class="stat-item">
+      <h2 class="count" data-target="500">0</h2>
       <p>Support</p>
-    </div>
-  </section>
+  </div>
+  <button id="startStats">Refresh</button>
+</section>
+
 
   <!-- Services Section -->
   <section class="services">
@@ -405,6 +415,67 @@ function activateTestimonial(activeTestimonial) {
 firstTestimonial.addEventListener('click', function() {
     activateTestimonial(firstTestimonial);
 });
+
+
+
+
+// Select all the stats items
+const counters = document.querySelectorAll('.count');
+
+// Add event listener to the button to trigger stats counting
+document.getElementById('startStats').addEventListener('click', () => {
+    counters.forEach(counter => {
+        counter.innerText = '0';
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+            const current = +counter.innerText;
+            const increment = target / 500; // Adjust speed by changing the divisor
+
+            if (current < target) {
+                counter.innerText = `${Math.ceil(current + increment)}`;
+                setTimeout(updateCount, 20); // Adjust speed by changing the timeout
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+});
+
+// Ensure the stats count every time the page is refreshed
+window.onload = () => {
+    counters.forEach(counter => {
+        counter.innerText = '0';
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+            const current = +counter.innerText;
+            const increment = target / 500;
+
+            if (current < target) {
+                counter.innerText = `${Math.ceil(current + increment)}`;
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+};
+
+
+
+function toggleVideo() {
+    var videoContainer = document.getElementById("videoContainer");
+    var video = document.getElementById("promoVideo");
+
+    if (video.paused) {
+        videoContainer.style.display = "block"; // Show the video container
+        video.play(); // Play the video
+    } else {
+        video.pause(); // Pause the video
+    }
+}
+
 
   </script>
 

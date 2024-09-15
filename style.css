@@ -79,118 +79,318 @@
 
   
   /* Hero Section */
-  .hero {
+  /* General styling for large screens */
+.hero {
     display: flex;
     justify-content: space-between;
     padding: 80px 40px;
     background-color: #f9f9f9;
-  }
-  
-  .signup-btn {
+}
+
+.signup-btn, .book-now, .watch-video {
     background-color: black;
     color: white;
-  }
-  .hero-text h1 {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-text h1 {
     font-size: 36px;
     margin-bottom: 20px;
-  }
-  
-  .hero-text form {
+}
+
+.hero-text form {
     display: flex;
-  }
-  
-  .hero-text form input {
+    margin-bottom: 20px;
+}
+
+.hero-text form input {
     padding: 10px;
     margin-right: 10px;
-    
-  }
-  
-  .hero-image img {
+    flex: 0;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image video {
+    width: 100%;
     max-width: 500px;
-    height: 100%;
-  }
+}
+
+#promoVideo {
+    border: 5px solid #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.expanded-video {
+    width: 640px;
+    height: 360px;
+}
+
+/* Media queries for responsiveness */
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+    .hero {
+        flex-direction: row;
+    }
+
+    .hero-text {
+        width: 50%;
+    }
+
+    .hero-image {
+        width: 50%;
+    }
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero {
+        flex-direction: row;
+        padding: 60px 30px;
+    }
+
+    .hero-text {
+        width: 60%;
+    }
+
+    .hero-image {
+        width: 40%;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .signup-btn, .book-now, .watch-video {
+        padding: 8px 16px;
+    }
+}
+
+/* Small screens (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-now, .watch-video {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+/* Extra small screens (below 576px) */
+@media (max-width: 575px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .signup-btn, .book-now, .watch-video {
+        padding: 8px 14px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image video {
+        width: 100%;
+        height: auto;
+    }
+
+    .expanded-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
   
   /* Stats Section */
-    .stats {
+  .stats {
     display: flex;
     justify-content: space-around;
-    padding: 40px;
-    background-color: #333;
+    padding: 20px;
+    background-color: #000;
+    margin-left: 200px;
+    margin-right: 250px;
+
+}
+
+.stat-item h2 {
+    font-size: 2rem;
     color: white;
-    margin-right: 45px;
-    margin-left: 45px;
-  }
-  
-  .stats .stat-item {
+    margin: 10px 5px;
     text-align: center;
-    
-  }
-  
-  .stats .stat-item h2 {
-    font-size: 32px;
-    margin-bottom: 5px;
-    
-  }
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+
+
 
 
 /*service section*/  
+/* Default styles for large screens (≥ 992px) */
 .doctor-cards {
     display: flex;
     flex-direction: column;
     margin: 25px;
     gap: 40px; /* Space between the two rows */
-  }
-  
-  .row {
+}
+
+.row {
     display: flex;
     justify-content: space-between; /* Distribute cards evenly */
     gap: 20px;
-  }
-  
-  
-  .doctor-card {
+}
+
+.doctor-card {
     width: 200px;
     text-align: center;
     padding: 20px;
     background-color: antiquewhite;
     border-radius: 10px;
     transition: transform 0.3s ease;
-  }
-  
-  .doctor-card img {
+}
+
+.doctor-card img {
     width: 100px;
     border-radius: 50%;
-  }
-  
-  .doctor-card h4 {
+}
+
+.doctor-card h4 {
     margin-top: 10px;
     font-size: 18px;
-  }
-  
-  .doctor-card .doctor-description {
+}
+
+.doctor-card .doctor-description {
     font-size: 14px;
     color: #333;
     margin-top: 10px;
     display: none;
-  }
-  
-  .doctor-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .doctor-card:hover .doctor-description {
-    display: block;
-  }
+}
 
-  .doctor-cards-grid {
+.doctor-card:hover {
+    transform: scale(1.05);
+}
+
+.doctor-card:hover .doctor-description {
+    display: block;
+}
+
+.doctor-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four cards per row */
     gap: 30px; /* Adjust space between both rows and cards */
-  }
-  
-  .doctor-cards-grid .doctor-card:nth-child(5) {
+}
+
+.doctor-cards-grid .doctor-card:nth-child(5) {
     grid-column: 1 / span 4; /* This keeps the second row aligned */
-  }
+}
+
+/* Responsive breakpoints */
+
+/* For large screens (≥ 992px) */
+@media (min-width: 992px) {
+    .doctor-cards-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four cards per row */
+    }
+}
+
+/* For tablets and medium devices (≥ 768px and < 992px) */
+@media (max-width: 991px) {
+    .doctor-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    }
+
+    .doctor-card {
+        width: 100%; /* Cards take full width */
+    }
+
+    .doctor-card img {
+        width: 90px; /* Adjust image size for medium screens */
+    }
+}
+
+/* For small devices (≥ 576px and < 768px) */
+@media (max-width: 767px) {
+    .doctor-cards-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .doctor-card {
+        width: 100%; /* Full width for small screens */
+    }
+
+    .doctor-card img {
+        width: 80px; /* Smaller image */
+    }
+
+    .doctor-card h4 {
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+/* For extra small devices (≤ 575px) */
+@media (max-width: 575px) {
+    .doctor-cards-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .doctor-card {
+        width: 100%; /* Full width for extra small screens */
+    }
+
+    .doctor-card img {
+        width: 70px; /* Even smaller image */
+    }
+
+    .doctor-card h4 {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .doctor-card .doctor-description {
+        font-size: 12px; /* Smaller font for the description */
+    }
+}
+
   /*are you looking for:*/
   .info-cards {
     display: flex;
@@ -388,6 +588,7 @@ h2 {
 }
 
 /* General section styling */
+/* Default styles for large screens (≥ 992px) */
 #urgent-care {
   display: flex;
   justify-content: space-between;
@@ -402,9 +603,9 @@ h2 {
 /* Text content (aligns to the left) */
 #urgent-care .text-content {
   flex: 1;
-  text-align: left; /* Align text to the left */
+  text-align: left;
   display: flex;
-  flex-direction: column; /* Stack text and button */
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -423,25 +624,24 @@ h2 {
 /* Button styling with black background and aqua hover */
 #urgent-care .text-content button {
   padding: 10px 20px;
-  background-color: black; /* Black background */
-  color: white; /* White text */
+  background-color: black;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px; /* Adds space above the button */
-  align-self: flex-start; /* Aligns button to the left */
+  margin-top: 10px;
+  align-self: flex-start;
 }
 
-/* Button hover effect with aqua background */
 #urgent-care .text-content button:hover {
-  background-color: aqua; /* Aqua hover effect */
-  color: black; /* Change text color to black on hover */
+  background-color: aqua;
+  color: black;
 }
 
 /* Image content */
 #urgent-care .image-content {
   flex: 1;
-  text-align: right; /* Ensure image is aligned to the right */
+  text-align: right;
 }
 
 #urgent-care .image-content img {
@@ -450,16 +650,15 @@ h2 {
   border-radius: 10px;
 }
 
-/* General section styling */
+/* Testimonials Section */
 #testimonials {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the content horizontally */
+  align-items: center;
   padding: 20px;
   position: relative;
 }
 
-/* Center the heading at the top of the section */
 #testimonials h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -468,18 +667,16 @@ h2 {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Horizontally center the text */
+  transform: translateX(-50%);
 }
 
-/* Container for the testimonials, placed below the heading */
 #testimonials .testimonial-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 60px; /* Creates space below the heading */
+  margin-top: 60px;
 }
 
-/* Styling for each testimonial */
 .testimonial {
   text-align: center;
   width: 45%;
@@ -494,21 +691,18 @@ h2 {
 }
 
 .testimonial:hover img {
-  transform: scale(1.1); /* Slight hover effect on image */
+  transform: scale(1.1);
 }
 
-/* Blur effect on non-selected testimonials */
 .testimonial.blurred {
   filter: blur(5px);
   opacity: 0.5;
 }
 
-/* Hidden message, initially */
 .message {
   display: none;
 }
 
-/* When the testimonial is active */
 .testimonial.active .message {
   display: block;
   margin-top: 10px;
@@ -516,24 +710,93 @@ h2 {
   color: #333;
 }
 
+/* Responsive breakpoints */
 
-/* Hidden message, initially */
-.message {
-  display: none;
+/* For tablets and medium devices (≥ 768px) */
+@media (max-width: 991px) {
+  #urgent-care {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  #urgent-care .image-content {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #urgent-care .text-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  #testimonials .testimonial-container {
+    flex-direction: column;
+  }
+
+  .testimonial {
+    width: 100%; /* Full width on medium screens */
+    margin-bottom: 20px;
+  }
 }
 
-/* When the testimonial is active */
-.testimonial.active .message {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #333;
+/* For small devices (≥ 576px and < 768px) */
+@media (max-width: 767px) {
+  #urgent-care {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  #urgent-care .text-content h2 {
+    font-size: 22px;
+  }
+
+  #urgent-care .text-content p {
+    font-size: 14px;
+  }
+
+  #urgent-care .text-content button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #testimonials h2 {
+    font-size: 24px;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
 }
 
-/* Make sure all messages are hidden initially */
-.message.hidden {
-  display: none;
+/* For extra small devices (≤ 575px) */
+@media (max-width: 575px) {
+  #urgent-care {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #urgent-care .text-content h2 {
+    font-size: 18px;
+  }
+
+  #urgent-care .text-content p {
+    font-size: 12px;
+  }
+
+  #urgent-care .text-content button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  #testimonials h2 {
+    font-size: 20px;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
 }
+
 
 #register {
   display: flex;
@@ -740,55 +1003,96 @@ footer {
 
 /* Base Styles (for screens larger than 992px) */
 
-/* Large screens (≥ 992px) */
-@media (max-width: 992px) {
+/* Large Screens (≥ 992px) */
+@media (min-width: 992px) {
   .hero {
-    flex-direction: column;
-    padding: 60px 20px;
+    padding: 80px 40px;
   }
-
-  .doctor-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .doctor-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .doctor-card {
+    width: 250px;
+  }
+  .info-cards {
+    flex-direction: row;
+  }
+  #best-doctor, #urgent-care {
+    display: flex;
+  }
+  #testimonials {
+    flex-direction: row;
   }
 }
 
-/* Medium screens (≥ 768px) */
-@media (max-width: 768px) {
+/* Medium Screens (≥ 768px and < 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .hero {
-    padding: 40px 15px;
+    padding: 60px 30px;
   }
-
-  .doctor-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .doctor-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+  .doctor-card {
+    width: 200px;
+  }
+  .info-cards {
+    flex-direction: row;
+  }
+  #best-doctor, #urgent-care {
+    display: flex;
+    flex-direction: column;
+  }
+  #testimonials {
+    flex-direction: column;
+  }
+}
 
-  .info-card {
+/* Small Screens (≥ 576px and < 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero {
+    padding: 40px 20px;
+  }
+  .doctor-cards {
+    flex-direction: column;
+  }
+  .doctor-card {
     width: 100%;
   }
+  .info-cards {
+    flex-direction: column;
+  }
+  #best-doctor, #urgent-care {
+    display: flex;
+    flex-direction: column;
+  }
+  #testimonials {
+    flex-direction: column;
+  }
 }
 
-/* Small screens (≥ 576px) */
-@media (max-width: 576px) {
+/* Extra Small Screens (< 576px) */
+@media (max-width: 575px) {
   .hero {
     padding: 20px 10px;
   }
-
-  .doctor-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .info-card {
-    width: 100%;
-  }
-}
-
-/* Extra small screens (< 576px) */
-@media (max-width: 575px) {
-  header nav {
+  .doctor-cards {
     flex-direction: column;
   }
-
-  .doctor-cards {
+  .doctor-card {
+    width: 100%;
+  }
+  .info-cards {
+    flex-direction: column;
+  }
+  #best-doctor, #urgent-care {
+    flex-direction: column;
+  }
+  #testimonials {
     flex-direction: column;
   }
 }
