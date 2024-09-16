@@ -240,33 +240,167 @@
 
   
   /* Stats Section */
-  .stats {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #000;
-    margin-left: 200px;
-    margin-right: 250px;
+  /* Default styles for the .stats section */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #000;
+  margin: 0 auto; /* Centering the container */
+  max-width: 1200px; /* Limit the maximum width */
+}
 
+/* Flex layout adjustments for .stat-item */
+.stat-item {
+  text-align: center;
+  flex: 1; /* Ensure items take up equal space */
+  padding: 10px;
 }
 
 .stat-item h2 {
-    font-size: 2rem;
-    color: white;
-    margin: 10px 5px;
-    text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin: 10px 5px;
 }
 
 .stat-item p {
-    font-size: 1rem;
-    color: white;
-    text-align: center;
+  font-size: 1rem;
+  color: white;
 }
+
+/* Large screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .stats {
+    margin-left: 200px;
+    margin-right: 250px;
+  }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .stats {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  .stat-item h2 {
+    font-size: 1.75rem; /* Slightly smaller heading */
+  }
+
+  .stat-item p {
+    font-size: 0.875rem; /* Slightly smaller text */
+  }
+}
+
+/* Small screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .stats {
+    flex-direction: column; /* Stack items vertically */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .stat-item {
+    margin-bottom: 20px; /* Space between stacked items */
+  }
+
+  .stat-item h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .stat-item p {
+    font-size: 0.75rem; /* Smaller text */
+  }
+}
+
+/* Extra small screens (≤ 767px) */
+@media (max-width: 767px) {
+  .stats {
+    flex-direction: column; /* Stack items vertically */
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .stat-item {
+    margin-bottom: 15px; /* Space between stacked items */
+  }
+
+  .stat-item h2 {
+    font-size: 1.25rem; /* Smaller heading */
+  }
+
+  .stat-item p {
+    font-size: 0.65rem; /* Smaller text */
+  }
+}
+
 
 
 
 
 /*service section*/  
+
+/* Basic styling for the doctor cards */
+.doctor-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.doctor-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.doctor-card h4 {
+  margin: 16px 0 8px;
+}
+
+.doctor-card p {
+  color: #555;
+  font-size: 0.875rem;
+}
+
+/* Grid layout for the cards */
+.row {
+  display: grid;
+  gap: 16px;
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small screens (up to 767px) */
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 /* Default styles for large screens (≥ 992px) */
 .doctor-cards {
     display: flex;
